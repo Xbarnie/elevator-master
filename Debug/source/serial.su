@@ -1,0 +1,6 @@
+serial.c:22:15:crc8_calc	24	static
+serial.c:62:6:wait	16	static
+serial.c:75:6:cancelBreak	8	static
+serial.c:85:6:elevatorStop	8	static
+serial.c:94:6:cabinLock	8	static
+serial.c:104:6:cabinUnlock	8	static

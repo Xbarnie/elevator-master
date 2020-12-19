@@ -1,0 +1,16 @@
+fsl_clock.h:584:20:CLOCK_EnableClock	24	static
+fsl_clock.h:620:20:CLOCK_SetLpsci0Clock	16	static
+fsl_gpio.h:157:20:GPIO_WritePinOutput	24	static
+fsl_dmamux.h:98:20:DMAMUX_EnableChannel	16	static
+fsl_dmamux.h:128:20:DMAMUX_SetSource	24	static
+fsl_port.h:256:20:PORT_SetPinConfig	32	static
+cmsis_i2c_read_accel_value_transfer.c:84:6:LPSCI_UserCallback	24	static
+cmsis_i2c_read_accel_value_transfer.c:99:13:i2c_release_bus_delay	16	static
+cmsis_i2c_read_accel_value_transfer.c:106:6:BOARD_I2C_ReleaseBus	16	static
+cmsis_i2c_read_accel_value_transfer.c:157:10:I2C0_GetFreq	8	static
+cmsis_i2c_read_accel_value_transfer.c:161:6:I2C_MasterSignalEvent_t	16	static
+cmsis_i2c_read_accel_value_transfer.c:170:13:I2C_ReadAccelWhoAmI	24	static
+cmsis_i2c_read_accel_value_transfer.c:242:13:I2C_WriteAccelReg	32	static
+cmsis_i2c_read_accel_value_transfer.c:265:13:I2C_ReadAccelRegs	40	static
+cmsis_i2c_read_accel_value_transfer.c:291:6:LPSI_conf	40	static
+cmsis_i2c_read_accel_value_transfer.c:320:5:main	88	static

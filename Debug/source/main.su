@@ -1,0 +1,17 @@
+fsl_clock.h:584:20:CLOCK_EnableClock	24	static
+fsl_clock.h:620:20:CLOCK_SetLpsci0Clock	16	static
+fsl_dmamux.h:98:20:DMAMUX_EnableChannel	16	static
+fsl_dmamux.h:128:20:DMAMUX_SetSource	24	static
+fsl_gpio.h:157:20:GPIO_WritePinOutput	24	static
+fsl_port.h:256:20:PORT_SetPinConfig	32	static
+fsl_lpsci.h:461:20:LPSCI_EnableTx	16	static
+fsl_lpsci.h:481:20:LPSCI_EnableRx	16	static
+main.c:49:6:LPSCI_UserCallback	24	static
+main.c:64:13:i2c_release_bus_delay	16	static
+main.c:71:6:BOARD_I2C_ReleaseBus	16	static
+main.c:127:6:LPSI_conf	24	static
+main.c:159:6:sendPacket	40	static
+main.c:190:6:sendAck	40	static
+main.c:222:6:elevatorSpeed	48	static
+main.c:265:6:serialConf	16	static
+main.c:280:5:main	48	static

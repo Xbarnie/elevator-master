@@ -1,0 +1,68 @@
+\hypertarget{serial_8c}{}\doxysection{C\+:/\+Users/\+Dell/git/semestralka/elevator\+\_\+local/source/serial.c File Reference}
+\label{serial_8c}\index{C:/Users/Dell/git/semestralka/elevator\_local/source/serial.c@{C:/Users/Dell/git/semestralka/elevator\_local/source/serial.c}}
+{\ttfamily \#include \char`\"{}stdio.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}stdint.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}serial.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+unsigned char \mbox{\hyperlink{serial_8c_ac8a1c8cc65788f7a505ecaafc97420f2}{crc8\+\_\+calc}} (unsigned char data\mbox{[}$\,$\mbox{]}, size\+\_\+t elements)
+\item 
+void \mbox{\hyperlink{serial_8c_aa3b21853f890838c88d047d6c2786917}{wait}} ()
+\item 
+void \mbox{\hyperlink{serial_8c_a2805854f9b6b9a07a840c187b4444ff0}{cancel\+Break}} ()
+\item 
+void \mbox{\hyperlink{serial_8c_a78daaa80b81a5680a294b453f41a43b9}{elevator\+Stop}} ()
+\item 
+void \mbox{\hyperlink{serial_8c_af261cce7a56195ace8b5b6f533c6bc26}{cabin\+Lock}} ()
+\item 
+void \mbox{\hyperlink{serial_8c_a98a422a57e2f3b101aea7756b2812f43}{cabin\+Unlock}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{serial_8c_af261cce7a56195ace8b5b6f533c6bc26}\label{serial_8c_af261cce7a56195ace8b5b6f533c6bc26}} 
+\index{serial.c@{serial.c}!cabinLock@{cabinLock}}
+\index{cabinLock@{cabinLock}!serial.c@{serial.c}}
+\doxysubsubsection{\texorpdfstring{cabinLock()}{cabinLock()}}
+{\footnotesize\ttfamily void cabin\+Lock (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+todo Uzamkni kabinu výtahu todo \mbox{\Hypertarget{serial_8c_a98a422a57e2f3b101aea7756b2812f43}\label{serial_8c_a98a422a57e2f3b101aea7756b2812f43}} 
+\index{serial.c@{serial.c}!cabinUnlock@{cabinUnlock}}
+\index{cabinUnlock@{cabinUnlock}!serial.c@{serial.c}}
+\doxysubsubsection{\texorpdfstring{cabinUnlock()}{cabinUnlock()}}
+{\footnotesize\ttfamily void cabin\+Unlock (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+todo Odemkni kabinu výtahu todo \mbox{\Hypertarget{serial_8c_a2805854f9b6b9a07a840c187b4444ff0}\label{serial_8c_a2805854f9b6b9a07a840c187b4444ff0}} 
+\index{serial.c@{serial.c}!cancelBreak@{cancelBreak}}
+\index{cancelBreak@{cancelBreak}!serial.c@{serial.c}}
+\doxysubsubsection{\texorpdfstring{cancelBreak()}{cancelBreak()}}
+{\footnotesize\ttfamily void cancel\+Break (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+todo Deaktivuj záchrannou brzdu todo \mbox{\Hypertarget{serial_8c_ac8a1c8cc65788f7a505ecaafc97420f2}\label{serial_8c_ac8a1c8cc65788f7a505ecaafc97420f2}} 
+\index{serial.c@{serial.c}!crc8\_calc@{crc8\_calc}}
+\index{crc8\_calc@{crc8\_calc}!serial.c@{serial.c}}
+\doxysubsubsection{\texorpdfstring{crc8\_calc()}{crc8\_calc()}}
+{\footnotesize\ttfamily unsigned char crc8\+\_\+calc (\begin{DoxyParamCaption}\item[{unsigned char}]{data\mbox{[}$\,$\mbox{]},  }\item[{size\+\_\+t}]{elements }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & je pole dat a velikost a vrací kontrolní součet, elements je velikost pole \\
+\hline
+\end{DoxyParams}
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000006}{Todo}}]výpočet kontrolního součtu podle tabulky C\+R\+C8 varianta maxim todo\end{DoxyRefDesc}
+\mbox{\Hypertarget{serial_8c_a78daaa80b81a5680a294b453f41a43b9}\label{serial_8c_a78daaa80b81a5680a294b453f41a43b9}} 
+\index{serial.c@{serial.c}!elevatorStop@{elevatorStop}}
+\index{elevatorStop@{elevatorStop}!serial.c@{serial.c}}
+\doxysubsubsection{\texorpdfstring{elevatorStop()}{elevatorStop()}}
+{\footnotesize\ttfamily void elevator\+Stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+todo Zastav pohyb kabiny výtahu todo \mbox{\Hypertarget{serial_8c_aa3b21853f890838c88d047d6c2786917}\label{serial_8c_aa3b21853f890838c88d047d6c2786917}} 
+\index{serial.c@{serial.c}!wait@{wait}}
+\index{wait@{wait}!serial.c@{serial.c}}
+\doxysubsubsection{\texorpdfstring{wait()}{wait()}}
+{\footnotesize\ttfamily void wait (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+todo Vykonec D\+E\+L\+AY todo 
