@@ -15,21 +15,15 @@
 #include "fsl_lpsci_dma.h"
 #include "clock_config.h"
 
-
 uint8_t txbuff[] = "LPSCI polling example\r\nSend back received data\r\n";
 uint8_t rxbuff[20] = {0};
-
-
-
 
 
 /* LPSCI user callback */
 void LPSCI_UserCallback(UART0_Type *base, lpsci_dma_handle_t *handle,
 		status_t status, void *userData);
 
-
-
-//lpsci
+//lpsci komunikacia
 
 lpsci_dma_handle_t g_lpsciDmaHandle;
 dma_handle_t g_lpsciTxDmaHandle;
@@ -122,7 +116,6 @@ void BOARD_I2C_ReleaseBus(void) {
 
 /**
  * @todo Konfiguruj LPSCI prenos todo
- *
  */
 void LPSI_conf(){
 		lpsci_config_t config;
@@ -154,7 +147,6 @@ void LPSI_conf(){
  * @param size je velkost dat
  * @param data je obsah správy
  * @todo Poši packet zadanej velkosti na danu adresu
- *
  */
 void sendPacket(char address, char size, char data){
 	char pole[6];
@@ -278,7 +270,23 @@ void serialConf(){
 
 
 int main(void) {
+	uint8_t ch;
+		BOARD_InitPins();
+		BOARD_BootClockRUN();
+		BOARD_I2C_ReleaseBus();
+		LPSI_conf();
+		serialConf();
 
+		int volba;
+		uint8_t mess[7];
+		int fl = 0;
+
+		while(true){
+			while (fl == 0)
+			 {
+//   swich case pre kabiny
+//   vyriesit posuvanie kabiny po poschodiach
+			 }
 }
 
 

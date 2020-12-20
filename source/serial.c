@@ -14,7 +14,6 @@
 /**
  * @param data je pole dat a velkost, vracia kontrolný súčet, elements je velkost pola
  * @todo výpočet kontrolného súčtu podla tabulky CRC8 varianta maxim todo
- *
  */
 
 
@@ -68,7 +67,6 @@ void wait(){
 }
 
 /**
- *
  * todo Deaktivuj záchrannu brzdu todo
  */
 
@@ -78,27 +76,21 @@ void cancelBreak(){
 
 
 /**
- *
  * todo Zastav pohyb kabíny výtahu todo
- *
  */
 void elevatorStop(){
 	sendPacket(0xf1, 0x01, 0x01);
 }
 
 /**
- *
  * todo Uzamkni kabinu výtahu todo
- *
  */
 void cabinLock(){
 	sendPacket(0xf0, 0x01, 0x01);
 }
 
 /**
- *
  * todo Odomkni kabinu výtahu todo
- *
  */
 
 void cabinUnlock(){
