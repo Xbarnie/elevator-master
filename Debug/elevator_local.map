@@ -110,14 +110,6 @@ Discarded input sections
  .text          0x00000000        0x0 ./startup/startup_mkl25z4.o
  .data          0x00000000        0x0 ./startup/startup_mkl25z4.o
  .bss           0x00000000        0x0 ./startup/startup_mkl25z4.o
- .text          0x00000000        0x0 ./source/elevator.o
- .data          0x00000000        0x0 ./source/elevator.o
- .bss           0x00000000        0x0 ./source/elevator.o
- .debug_line    0x00000000        0x0 ./source/elevator.o
- .debug_str     0x00000000      0x131 ./source/elevator.o
- .comment       0x00000000       0x76 ./source/elevator.o
- .ARM.attributes
-                0x00000000       0x32 ./source/elevator.o
  .text          0x00000000        0x0 ./source/main.o
  .data          0x00000000        0x0 ./source/main.o
  .bss           0x00000000        0x0 ./source/main.o
@@ -1036,7 +1028,6 @@ Linker script and memory map
 
 LOAD ./utilities/fsl_debug_console.o
 LOAD ./startup/startup_mkl25z4.o
-LOAD ./source/elevator.o
 LOAD ./source/main.o
 LOAD ./source/mtb.o
 LOAD ./source/semihost_hardfault.o

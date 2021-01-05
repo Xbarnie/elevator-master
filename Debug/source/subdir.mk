@@ -4,21 +4,18 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
-../source/elevator.c \
 ../source/main.c \
 ../source/mtb.c \
 ../source/semihost_hardfault.c \
 ../source/serial.c 
 
 OBJS += \
-./source/elevator.o \
 ./source/main.o \
 ./source/mtb.o \
 ./source/semihost_hardfault.o \
 ./source/serial.o 
 
 C_DEPS += \
-./source/elevator.d \
 ./source/main.d \
 ./source/mtb.d \
 ./source/semihost_hardfault.d \
