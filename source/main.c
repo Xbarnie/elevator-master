@@ -329,8 +329,6 @@ int main(void) {
 	while (fl == 1)
 	{
 
-
-
 		     	LPSCI_ReadBlocking(DEMO_LPSCI, &ch, 1);//0x00
 		     	PRINTF("ch = %d", ch);
 				LPSCI_ReadBlocking(DEMO_LPSCI, &ch, 1);//0x00
@@ -366,24 +364,41 @@ int main(void) {
 
 				if (addr == 0xc4 || addr == 0xb4){
 					volba = 4;
-					PRINTF("case 4 selected\n");
+					PRINTF("Vybrali ste kabinu 4\n");
 					sendPacket(0x14,0x01,0x01);
 				}
 
+				if (addr == 0xc3 || addr == 0xb3){
+					volba = 3;
+					PRINTF("Vybrali ste kabinu 3\n");
+					sendPacket(0x13,0x01,0x01);
+				}
+
+				if (addr == 0xc2 || addr == 0xb2){
+					volba = 2;
+					PRINTF("Vybrali ste kabinu 2\n");
+					sendPacket(0x12,0x01,0x01);
+				}
+
+				if (addr == 0xc1 || addr == 0xb1){
+					volba = 1;
+					PRINTF("Vybrali ste kabinu 1\n");
+					sendPacket(0x11,0x01,0x01);
+				}
 				if (addr == 0xc0 || addr == 0xb0){
 					volba = 0;
-					PRINTF("case 0 selected\n");
+					PRINTF("Vybrali ste kabinu na prizemi\n");
 					sendPacket(0x10,0x01,0x01);
 				}
 
 		switch (volba) {
 		case 4:
-			PRINTF("case 4 started\n");
+			PRINTF("Kabina 4 v pohybe\n");
 			sendPacket(0xf,0x01,0x00);
 			cabinLock();
 			wait();
 			elevatorSpeed(75);
-			PRINTF("cabin locked & elevator speed == 75\n");
+			PRINTF("Kabina zavreta a rychlost vytahu bude == 75\n");
 			int i = 0;
 
 			while (i < 2) {
@@ -411,11 +426,11 @@ int main(void) {
 
 				char where = mess[2];
 				char command = mess[4];
-				PRINTF("Where = %x\n", mess[2]);
-				PRINTF("What = %x\n", mess[4]);
+				PRINTF("Kde = %x\n", mess[2]);
+				PRINTF("Co = %x\n", mess[4]);
 
 				if (where == 0xe4 && command == 0x02) {
-					PRINTF("elevator is close to switch 4\n");
+					PRINTF("Vytah je blizko switch 4\n");
 					elevatorSpeed(10);
 					i = 1;
 				} else {
@@ -424,7 +439,7 @@ int main(void) {
 
 				}
 				if (where == 0xe4 && command == 0x01) {
-					PRINTF("elevator stop\n");
+					PRINTF("Vytah zastal\n");
 					elevatorStop();
 					sendPacket(0x14,0x01,0x00);
 					cabinUnlock();
@@ -444,8 +459,207 @@ int main(void) {
 
 			break;
 
+		case 3:
+					PRINTF("case 3 started\n");
+					sendPacket(0xf,0x01,0x00);
+					cabinLock();
+					wait();
+					elevatorSpeed(75);
+					PRINTF("cabin locked & elevator speed == 75\n");
+				    i = 0;
+
+					while (i < 2) {
+						LPSCI_ReadBlocking(DEMO_LPSCI, &ch, 1);
+						LPSCI_ReadBlocking(DEMO_LPSCI, &ch, 1);
+						LPSCI_ReadBlocking(DEMO_LPSCI, &ch, 1);
+						mess[0] = ch;
+						LPSCI_ReadBlocking(DEMO_LPSCI, &ch, 1);
+						mess[1] = ch;
+						LPSCI_ReadBlocking(DEMO_LPSCI, &ch, 1);
+						mess[2] = ch;
+						LPSCI_ReadBlocking(DEMO_LPSCI, &ch, 1);
+						mess[3] = ch;
+						LPSCI_ReadBlocking(DEMO_LPSCI, &ch, 1);
+						mess[4] = ch;
+						LPSCI_ReadBlocking(DEMO_LPSCI, &ch, 1);
+						mess[5] = ch;
+
+						PRINTF("0B: %x\n", mess[0]); //Adresa
+						PRINTF("1B: %x\n", mess[1]); //Adresa
+						PRINTF("2B: %x\n", mess[2]); //NULL
+						PRINTF("3B: %x\n", mess[3]); //size
+						PRINTF("4B: %x\n", mess[4]); //size
+						PRINTF("5B: %x\n", mess[5]); //size
+
+						char where = mess[2];
+						char command = mess[4];
+						PRINTF("Where = %x\n", mess[2]);
+						PRINTF("What = %x\n", mess[4]);
+
+						if (where == 0xe3 && command == 0x01) {
+							PRINTF("elevator is close to switch 3\n");
+							elevatorSpeed(10);
+							i = 1;
+						} else {
+
+							sendAck(where);
+
+						}
+						if (where == 0xe3 && command == 0x01) {
+							PRINTF("elevator stop\n");
+							elevatorStop();
+							sendPacket(0x13,0x01,0x00);
+							cabinUnlock();
+							i = 2;
+
+						} else {
+
+							sendAck(where);
+						}
+						volba = 10;
+						addr = 0x00;
+
+					}
+					volba = 10;
+					addr = 0x00;
+					fl = 1;
+
+					break;
+		case 2:
+							PRINTF("case 2 started\n");
+							sendPacket(0xf,0x01,0x00);
+							cabinLock();
+							wait();
+							elevatorSpeed(75);
+							PRINTF("cabin locked & elevator speed == 75\n");
+						    i = 0;
+
+							while (i < 2) {
+								LPSCI_ReadBlocking(DEMO_LPSCI, &ch, 1);
+								LPSCI_ReadBlocking(DEMO_LPSCI, &ch, 1);
+								LPSCI_ReadBlocking(DEMO_LPSCI, &ch, 1);
+								mess[0] = ch;
+								LPSCI_ReadBlocking(DEMO_LPSCI, &ch, 1);
+								mess[1] = ch;
+								LPSCI_ReadBlocking(DEMO_LPSCI, &ch, 1);
+								mess[2] = ch;
+								LPSCI_ReadBlocking(DEMO_LPSCI, &ch, 1);
+								mess[3] = ch;
+								LPSCI_ReadBlocking(DEMO_LPSCI, &ch, 1);
+								mess[4] = ch;
+								LPSCI_ReadBlocking(DEMO_LPSCI, &ch, 1);
+								mess[5] = ch;
+
+								PRINTF("0B: %x\n", mess[0]); //Adresa
+								PRINTF("1B: %x\n", mess[1]); //Adresa
+								PRINTF("2B: %x\n", mess[2]); //NULL
+								PRINTF("3B: %x\n", mess[3]); //size
+								PRINTF("4B: %x\n", mess[4]); //size
+								PRINTF("5B: %x\n", mess[5]); //size
+
+								char where = mess[2];
+								char command = mess[4];
+								PRINTF("Where = %x\n", mess[2]);
+								PRINTF("What = %x\n", mess[4]);
+
+								if (where == 0xe2 && command == 0x01) {
+									PRINTF("elevator is close to switch 2\n");
+									elevatorSpeed(10);
+									i = 1;
+								} else {
+
+									sendAck(where);
+
+								}
+								if (where == 0xe2 && command == 0x01) {
+									PRINTF("elevator stop\n");
+									elevatorStop();
+									sendPacket(0x12,0x01,0x00);
+									cabinUnlock();
+									i = 2;
+
+								} else {
+
+									sendAck(where);
+								}
+								volba = 10;
+								addr = 0x00;
+
+							}
+							volba = 10;
+							addr = 0x00;
+							fl = 1;
+
+							break;
+
+		case 1:
+				("case 1 started\n");
+				sendPacket(0xf,0x01,0x00);
+				cabinLock();
+				wait();
+				elevatorSpeed(75);
+				PRINTF("cabin locked & elevator speed == 75\n");
+				i = 0;
+
+				while (i < 2) {
+				LPSCI_ReadBlocking(DEMO_LPSCI, &ch, 1);
+				LPSCI_ReadBlocking(DEMO_LPSCI, &ch, 1);
+				LPSCI_ReadBlocking(DEMO_LPSCI, &ch, 1);
+				mess[0] = ch;
+				LPSCI_ReadBlocking(DEMO_LPSCI, &ch, 1);
+				mess[1] = ch;
+				LPSCI_ReadBlocking(DEMO_LPSCI, &ch, 1);
+				mess[2] = ch;
+				LPSCI_ReadBlocking(DEMO_LPSCI, &ch, 1);
+				mess[3] = ch;
+				LPSCI_ReadBlocking(DEMO_LPSCI, &ch, 1);
+				mess[4] = ch;
+				LPSCI_ReadBlocking(DEMO_LPSCI, &ch, 1);
+				mess[5] = ch;
+
+				PRINTF("0B: %x\n", mess[0]); //Adresa
+				PRINTF("1B: %x\n", mess[1]); //Adresa
+				PRINTF("2B: %x\n", mess[2]); //NULL
+				PRINTF("3B: %x\n", mess[3]); //size
+				PRINTF("4B: %x\n", mess[4]); //size
+				PRINTF("5B: %x\n", mess[5]); //size
+
+				char where = mess[2];
+				char command = mess[4];
+				PRINTF("Where = %x\n", mess[2]);
+				PRINTF("What = %x\n", mess[4]);
+
+				if (where == 0xe1 && command == 0x01) {
+				PRINTF("elevator is close to switch 1\n");
+				elevatorSpeed(10);
+				i = 1;
+				} else {
+
+					sendAck(where);
+
+					   }
+				if (where == 0xe1 && command == 0x01) {
+				PRINTF("elevator stop\n");
+				elevatorStop();
+				sendPacket(0x11,0x01,0x00);
+				cabinUnlock();
+				i = 2;
+
+			    } else {
+
+				sendAck(where);
+					   }
+				volba = 10;
+				addr = 0x00;
+
+				}
+				volba = 10;
+				addr = 0x00;
+				fl = 1;
+
+				break;
 		case 0:
-				PRINTF("case 0 started\n");
+				PRINTF("Kabina 1 v pohybe\n");
 				cancelBreak();
 				cabinLock();
 				wait();
