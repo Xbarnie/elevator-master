@@ -4,3 +4,5 @@ serial.c:73:6:cancelBreak	8	static
 serial.c:81:6:elevatorStop	8	static
 serial.c:88:6:cabinLock	8	static
 serial.c:96:6:cabinUnlock	8	static
+serial.c:100:6:switchOnDisplay	16	static
+serial.c:108:6:switchOffDisplay	16	static

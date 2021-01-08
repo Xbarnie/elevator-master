@@ -13,5 +13,5 @@ main.c:120:6:LPSI_conf	24	static
 main.c:151:6:sendPacket	40	static
 main.c:182:6:sendAck	40	static
 main.c:214:6:elevatorSpeed	48	static
-main.c:257:6:serialConf	16	static
-main.c:272:5:main	56	static
+main.c:258:6:serialConf	16	static
+main.c:273:5:main	56	static

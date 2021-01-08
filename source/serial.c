@@ -97,7 +97,18 @@ void cabinUnlock(){
 	sendPacket(0xf0, 0x01, 0x00);
 }
 
+void switchOnDisplay(data) {
+	if (data > 0) {
+		sendPacket(0x30, 0x01, 0x01);
+	} else {
+		sendPacket(0x30, 0x01, 0x02);
+	}
+}
 
-
+void switchOffDisplay() {
+	uint8_t to_send[1];
+	to_send[0] = 0x00;
+	sendPacket(0x30, 0x01, to_send);
+}
 
 
