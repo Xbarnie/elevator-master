@@ -1,19 +1,16 @@
 /*
  **
- * Pomocný subor serial.c v ktorom se nachádzaju dalšie funkcie
+ * Pomocný subor v ktorom se nachádzaju dalšie funkcie
  */
-
-
 
 #include "stdio.h"
 #include "stdint.h"
 #include "serial.h"
 #include <stddef.h>
 
-
 /**
  * @param data je pole dat a velkost, vracia kontrolný súčet, elements je velkost pola
- * @todo výpočet kontrolného súčtu podla tabulky CRC8 varianta maxim todo
+ * @todo výpočet kontrolného súčtu podla tabulky CRC8 varianta maxim TODO
  */
 
 
@@ -55,7 +52,7 @@ static unsigned char crc8_table[] = { 0, 94, 188, 226, 97, 63, 221, 131, 194, 15
 }
 
 /**
- * todo Vykonec DELAY todo
+ * todo DELAY TODO
  */
 
 void wait(){
@@ -67,35 +64,38 @@ void wait(){
 }
 
 /**
- * todo Deaktivuj záchrannu brzdu todo
+ * todo Deaktivuj záchrannu brzdu TODO
  */
 
 void cancelBreak(){
 	sendPacket(0xf, 0x01, 0x00);
 }
 
-
 /**
- * todo Zastav pohyb kabíny výtahu todo
+ * todo Zastav pohyb kabíny výtahu TODO
  */
 void elevatorStop(){
 	sendPacket(0xf1, 0x01, 0x01);
 }
 
 /**
- * todo Uzamkni kabinu výtahu todo
+ * todo Uzamkni kabinu výtahu TODO
  */
 void cabinLock(){
 	sendPacket(0xf0, 0x01, 0x01);
 }
 
 /**
- * todo Odomkni kabinu výtahu todo
+ * todo Odomkni kabinu výtahu TODO
  */
 
 void cabinUnlock(){
 	sendPacket(0xf0, 0x01, 0x00);
 }
+
+/**
+ * todo Zobraz pohyb na displeji TODO
+ */
 
 void switchOnDisplay(data) {
 	if (data > 0) {
@@ -104,6 +104,10 @@ void switchOnDisplay(data) {
 		sendPacket(0x30, 0x01, 0x02);
 	}
 }
+
+/**
+ * todo Vymaz displej TODO
+ */
 
 void switchOffDisplay() {
 	uint8_t to_send[1];
