@@ -9,9 +9,9 @@ fsl_lpsci.h:481:20:LPSCI_EnableRx	16	static
 main.c:43:6:LPSCI_UserCallback	24	static
 main.c:58:13:i2c_release_bus_delay	16	static
 main.c:65:6:BOARD_I2C_ReleaseBus	16	static
-main.c:120:6:LPSI_conf	24	static
-main.c:151:6:sendPacket	40	static
-main.c:182:6:sendAck	40	static
-main.c:214:6:elevatorSpeed	48	static
-main.c:258:6:serialConf	16	static
-main.c:273:5:main	56	static
+main.c:119:6:LPSI_conf	24	static
+main.c:150:6:sendPacket	40	static
+main.c:181:6:sendAck	40	static
+main.c:213:6:elevatorSpeed	48	static
+main.c:256:6:serialConf	16	static
+main.c:274:5:main	56	static

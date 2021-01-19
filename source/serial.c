@@ -10,7 +10,7 @@
 
 /**
  * @param data je pole dat a velkost, vracia kontrolný súčet, elements je velkost pola
- * @todo výpočet kontrolného súčtu podla tabulky CRC8 varianta maxim TODO
+ * @todo výpočet kontrolného súčtu podla tabulky CRC8 varianta maxim
  */
 
 
@@ -52,7 +52,7 @@ static unsigned char crc8_table[] = { 0, 94, 188, 226, 97, 63, 221, 131, 194, 15
 }
 
 /**
- * todo DELAY TODO
+ * @todo DELAY
  */
 
 void wait(){
@@ -64,7 +64,7 @@ void wait(){
 }
 
 /**
- * todo Deaktivuj záchrannu brzdu TODO
+ * @todo Deaktivuj záchrannu brzdu
  */
 
 void cancelBreak(){
@@ -72,21 +72,21 @@ void cancelBreak(){
 }
 
 /**
- * todo Zastav pohyb kabíny výtahu TODO
+ * @todo Zastav pohyb kabíny výtahu
  */
 void elevatorStop(){
 	sendPacket(0xf1, 0x01, 0x01);
 }
 
 /**
- * todo Uzamkni kabinu výtahu TODO
+ * @todo Uzamkni kabinu výtahu
  */
 void cabinLock(){
 	sendPacket(0xf0, 0x01, 0x01);
 }
 
 /**
- * todo Odomkni kabinu výtahu TODO
+ * @todo Odomkni kabinu výtahu
  */
 
 void cabinUnlock(){
@@ -94,7 +94,7 @@ void cabinUnlock(){
 }
 
 /**
- * todo Zobraz pohyb na displeji TODO
+ * @todo Zobraz pohyb na displeji
  */
 
 void switchOnDisplay(data) {
@@ -106,7 +106,7 @@ void switchOnDisplay(data) {
 }
 
 /**
- * todo Vymaz displej TODO
+ * @todo Vymaz displej
  */
 
 void switchOffDisplay() {
